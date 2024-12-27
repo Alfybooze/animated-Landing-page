@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+/* Set hero section to be full screen */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Places video behind everything */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)); /* Customize gradient */
+    z-index: -1; /* Places gradient above video but behind content */
+}
+/* Main content styling */
+.main-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+}
+/* Hide video on mobile and show a fallback background */
+@media (max-width: 768px) {
+    .background-video {
+        display: none;
+    }
+    .hero {
+        background: url('construction worker.avifck') no-repeat center center/cover;
+    }
+}
+.hero #nav_bar {
+    padding-top: 10px;
+    background-color: transparent;
+    position: relative;
+    a{
+    color: black;
+    box-shadow: 20px;
+    border-radius: 10px;
+    }
+}
+@keyframes colorChange {
+    0% { color:white; }    /* Red */
+    50% { color: Black;}   
+    100%{color: whitesmoke;}
+}
+.nav-link {
+    
+    display: inline-block;
+    transition: color 0.3s;
+    animation: colorChange 20s infinite; /* Animation duration and infinite loop */
+  }
+  
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: rgb(239, 171, 171);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+
+/* Apply color-changing animation to nav links */
+.nav-link {
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s;
+   
+}
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
+    z-index: -1;
+}
+.hero-content{
+    margin-top: 100px;
+}
+/* Basic slide-in from the left */
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in from the right */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in from the bottom */
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  /* Basic slide-in from the left */
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in from the right */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in from the bottom */
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to elements */
+  #intro {
+    animation: slideInUp 1s ease-out;
+  }
+  #intro1,#intro2{
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(50px); /* Slightly moved down */
+      transition: transform 1s ease-out, opacity 1s ease-out;
+    }
+    
+    /* When in view, apply the sliding animation */
+    .animate-on-scroll.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #intro1{
+        margin-top: 50px;
+    }
+    #works{
+        margin-top: 40px;
+        color: white;
+        img{
+            padding-top: 5px;
+            margin-left: 15tpx;
+            color: white;
+            border-style:5px ridge;
+            border-radius: 5px;
+            background-color:burlywood;
+        }
+        p{
+            margin-left:20px ;
+        }
+    }
